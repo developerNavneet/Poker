@@ -1,0 +1,54 @@
+[2025-01-02T05:39:09.112Z] info: Configuring db in undefined mode
+[2025-01-02T05:39:09.114Z] info: Connecting to -> NaN
+[2025-01-02T05:39:09.146Z] info: Connected to DB
+[2025-01-02T05:40:38.433Z] info: Configuring db in undefined mode
+[2025-01-02T05:40:38.434Z] info: Connecting to -> mongodb://localhost:27017/pokerundefined
+[2025-01-02T05:40:38.467Z] info: Connected to DB
+[2025-01-02T05:42:07.126Z] info: Configuring db in undefined mode
+[2025-01-02T05:42:07.127Z] info: Connecting to -> mongodb://localhost:27017/pokerundefined
+[2025-01-02T05:42:07.158Z] info: Connected to DB
+[2025-01-02T05:49:46.145Z] info: Configuring db in undefined mode
+[2025-01-02T05:49:46.146Z] info: Connecting to -> mongodb://localhost:27017/pokerundefined
+[2025-01-02T05:49:46.181Z] info: Connected to DB
+[2025-01-22T11:01:59.583Z] info: Configuring db in development mode
+[2025-01-22T11:01:59.586Z] info: Connecting to -> mongodb+srv://shuyuanlee87:pbYB3IOOXSmXX8Di@poker.3hku3.mongodb.net/poker
+[2025-01-22T11:02:01.704Z] info: Connected to DB
+[2025-01-22T11:03:12.613Z] info: Configuring db in development mode
+[2025-01-22T11:03:12.615Z] info: Connecting to -> mongodb+srv://shuyuanlee87:pbyb3iooxsmxx8di@poker.3hku3.mongodb.net/poker
+[2025-01-22T11:03:14.053Z] info: DB connection disconnected.
+[2025-01-22T11:04:26.645Z] info: Configuring db in development mode
+[2025-01-22T11:04:26.648Z] info: Connecting to -> mongodb+srv://shuyuanlee87:pbyb3iooxsmxx8di@poker.3hku3.mongodb.net/poker
+[2025-01-22T11:04:28.178Z] info: DB connection disconnected.
+[2025-01-22T11:05:59.486Z] info: Configuring db in development mode
+[2025-01-22T11:05:59.488Z] info: Connecting to -> mongodb+srv://shuyuanlee87:pbyb3iooxsmxx8di@poker.3hku3.mongodb.net/poker
+[2025-01-22T11:06:01.045Z] info: DB connection disconnected.
+[2025-01-22T11:09:57.465Z] info: Configuring db in development mode
+[2025-01-22T11:09:57.470Z] info: Connecting to -> mongodb+srv://shuyuanlee87:pbyb3iooxsmxx8di@poker.3hku3.mongodb.net/poker
+[2025-01-22T11:09:58.917Z] info: DB connection disconnected.
+[2025-01-22T11:12:45.103Z] info: Configuring db in development mode
+[2025-01-22T11:12:45.105Z] info: Connecting to -> mongodb+srv://shuyuanlee87:pbyb3iooxsmxx8di@poker.3hku3.mongodb.net/poker
+[2025-01-22T11:12:46.607Z] info: DB connection disconnected.
+[2025-01-22T11:12:48.042Z] info: Configuring db in development mode
+[2025-01-22T11:12:48.045Z] info: Connecting to -> mongodb+srv://shuyuanlee87:pbyb3iooxsmxx8di@poker.3hku3.mongodb.net/poker
+[2025-01-22T11:12:49.422Z] info: DB connection disconnected.
+[2025-01-22T11:12:59.245Z] info: Configuring db in development mode
+[2025-01-22T11:12:59.247Z] info: Connecting to -> mongodb+srv://shuyuanlee87:pbyb3iooxsmxx8di@poker.3hku3.mongodb.net/poker
+[2025-01-22T11:13:00.554Z] info: DB connection disconnected.
+[2025-01-22T11:14:22.042Z] info: Configuring db in development mode
+[2025-01-22T11:14:22.047Z] info: Connecting to -> mongodb+srv://shuyuanlee87:pbyb3iooxsmxx8di@poker.3hku3.mongodb.net/poker
+[2025-01-22T11:14:23.391Z] info: DB connection disconnected.
+[2025-01-22T11:14:33.047Z] info: Configuring db in development mode
+[2025-01-22T11:14:33.049Z] info: Connecting to -> mongodb+srv://shuyuanlee87:pbyb3iooxsmxx8di@poker.3hku3.mongodb.net/poker
+[2025-01-22T11:14:34.365Z] info: DB connection disconnected.
+[2025-01-22T11:16:42.352Z] info: Configuring db in development mode
+[2025-01-22T11:16:42.354Z] info: Connecting to -> mongodb+srv://shuyuanlee87:pbyb3iooxsmxx8di@poker.3hku3.mongodb.net/poker
+[2025-01-22T11:16:43.763Z] info: DB connection disconnected.
+[2025-01-22T11:22:38.196Z] info: Configuring db in development mode
+[2025-01-22T11:22:38.198Z] info: Connecting to -> mongodb+srv://shuyuanlee87:pbyb3iooxsmxx8di@poker.3hku3.mongodb.net/poker
+[2025-01-22T11:22:39.561Z] info: DB connection disconnected.
+[2025-01-22T11:23:19.814Z] info: Configuring db in development mode
+[2025-01-22T11:23:19.816Z] info: Connecting to -> mongodb+srv://shuyuanlee87:pbyb3iooxsmxx8di@poker.3hku3.mongodb.net/poker
+[2025-01-22T11:23:21.127Z] info: DB connection disconnected.
+[2025-01-22T11:23:26.081Z] info: Configuring db in development mode
+[2025-01-22T11:23:26.083Z] info: Connecting to -> mongodb+srv://shuyuanlee87:pbyb3iooxsmxx8di@poker.3hku3.mongodb.net/poker
+[2025-01-22T11:23:27.608Z] info: DB connection disconnected.

@@ -1,0 +1,125 @@
+exports = async function (changeEvent) {
+  const serviceName = "Poker"; // Your linked cluster name
+  const database = "poker"; // Database name
+  const bettingStatsCollection = "betting_stats";
+  const allBetStatsCollection = "allbet_stats";
+
+  const db = context.services.get(serviceName).db(database);
+  const bettingStats = db.collection(bettingStatsCollection);
+  const allBetStats = db.collection(allBetStatsCollection);
+
+  // Access the _id and full document
+  const { operationType, fullDocument } = changeEvent;
+
+  if (operationType !== "insert" && operationType !== "update") {
+    return; // Ignore delete or other events
+  }
+
+  if (!fullDocument || !fullDocument.date) {
+    console.log("Document missing required 'date' field.");
+    return;
+  }
+
+  const targetDate = fullDocument.date;
+
+  try {
+    // Aggregate sums for the specific date
+    const aggregation = await bettingStats
+      .aggregate([
+        { $match: { date: targetDate } },
+        {
+          $group: {
+            _id: "$date",
+            // _id: null,
+            // expenseBet: { $sum: "$expenseBet" },
+            // expenseBeforePayout: { $sum: "$expenseBeforePayout" },
+            // expenseAfterPayout: { $sum: "$expenseAfterPayout" },
+            // expenseBeforeProfit: { $sum: "$expenseBeforeProfit" },
+            // expenseAfterProfit: { $sum: "$expenseAfterProfit" },
+            sportBet: { $sum: "$sportBet" },
+            sportBeforePayout: { $sum: "$sportBeforePayout" },
+            sportAfterPayout: { $sum: "$sportAfterPayout" },
+            sportBeforeProfit: { $sum: "$sportBeforeProfit" },
+            sportAfterProfit: { $sum: "$sportAfterProfit" },
+            liveCasinoBet: { $sum: "$liveCasinoBet" },
+            liveCasinoBeforePayout: { $sum: "$liveCasinoBeforePayout" },
+            liveCasinoAfterPayout: { $sum: "$liveCasinoAfterPayout" },
+            liveCasinoBeforeProfit: { $sum: "$liveCasinoBeforeProfit" },
+            liveCasinoAfterProfit: { $sum: "$liveCasinoAfterProfit" },
+            lotteryBet: { $sum: "$lotteryBet" },
+            lotteryBeforePayout: { $sum: "$lotteryBeforePayout" },
+            lotteryAfterPayout: { $sum: "$lotteryAfterPayout" },
+            lotteryBeforeProfit: { $sum: "$lotteryBeforeProfit" },
+            lotteryAfterProfit: { $sum: "$lotteryAfterProfit" },
+            gamesBet: { $sum: "$gamesBet" },
+            gamesBeforePayout: { $sum: "$gamesBeforePayout" },
+            gamesAfterPayout: { $sum: "$gamesAfterPayout" },
+            gamesBeforeProfit: { $sum: "$gamesBeforeProfit" },
+            gamesAfterProfit: { $sum: "$gamesAfterProfit" },
+            p2pBet: { $sum: "$p2pBet" },
+            p2pBeforePayout: { $sum: "$p2pBeforePayout" },
+            p2pAfterPayout: { $sum: "$p2pAfterPayout" },
+            p2pBeforeProfit: { $sum: "$p2pBeforeProfit" },
+            p2pAfterProfit: { $sum: "$p2pAfterProfit" },
+          },
+        },
+      ])
+      .toArray();
+
+    if (!aggregation.length) {
+      console.log("No matching records found for date:", targetDate);
+      return;
+    }
+
+    const summary = aggregation[0];
+
+    // Calculate totals
+    summary.totalBet =
+      summary.sportBet +
+      summary.liveCasinoBet +
+      summary.lotteryBet +
+      summary.gamesBet +
+      summary.p2pBet;
+
+    summary.totalBeforePayout =
+      summary.sportBeforePayout +
+      summary.liveCasinoBeforePayout +
+      summary.lotteryBeforePayout +
+      summary.gamesBeforePayout +
+      summary.p2pBeforePayout;
+
+    summary.totalAfterPayout =
+      summary.sportAfterPayout +
+      summary.liveCasinoAfterPayout +
+      summary.lotteryAfterPayout +
+      summary.gamesAfterPayout +
+      summary.p2pAfterPayout;
+
+    summary.totalBeforeProfit =
+      summary.sportBeforeProfit +
+      summary.liveCasinoBeforeProfit +
+      summary.lotteryBeforeProfit +
+      summary.gamesBeforeProfit +
+      summary.p2pBeforeProfit;
+
+    summary.totalAfterProfit =
+      summary.sportAfterProfit +
+      summary.liveCasinoAfterProfit +
+      summary.lotteryAfterProfit +
+      summary.gamesAfterProfit +
+      summary.p2pAfterProfit;
+
+    // Exclude _id from summary
+    const { _id, ...summaryWithoutId } = summary;
+    // Upsert into allbet_stats collection
+    await allBetStats.updateOne(
+      { date: targetDate },
+      { $set: summaryWithoutId },
+      { upsert: true }
+    );
+
+    console.log("Aggregated data successfully upserted for date:", targetDate);
+  } catch (err) {
+    console.error("Error processing trigger event:", err.message);
+  }
+};

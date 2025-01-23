@@ -1,0 +1,43 @@
+{
+  "name": "poker_api",
+  "version": "1.0.0",
+  "description": "poker",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "basic-auth": "^2.0.1",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.20.0",
+    "lodash": "^4.17.21",
+    "method-override": "^3.0.0",
+    "moment": "^2.30.1",
+    "mongodb": "^6.8.1",
+    "mongoose": "^8.6.1",
+    "multer": "^1.4.5-lts.1",
+    "node-cron": "^3.0.3",
+    "nodemon": "^3.1.4",
+    "p-limit": "^6.1.0",
+    "promise-retry": "^2.0.1",
+    "qs": "^6.13.0",
+    "redis": "^3.0.2",
+    "redis-sessions": "^3.0.0",
+    "response-time": "^2.3.2",
+    "winston": "^3.14.2"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {}
+}
